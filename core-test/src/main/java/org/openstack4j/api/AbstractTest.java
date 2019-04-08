@@ -49,6 +49,7 @@ public abstract class AbstractTest {
         BARBICAN(9311),
         MAGNUM(9511),
         ORCHESTRATION(8004),
+        GNOCCHI(8041),
         DATABASE(8779),
         TACKER(9890),
         IMAGE(9292),

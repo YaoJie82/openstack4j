@@ -1,13 +1,18 @@
 package org.openstack4j.api;
 
+import java.util.Map;
+import java.util.Set;
+
 import org.openstack4j.api.artifact.ArtifactService;
 import org.openstack4j.api.barbican.BarbicanService;
 import org.openstack4j.api.compute.ComputeService;
 import org.openstack4j.api.dns.v2.DNSService;
 import org.openstack4j.api.exceptions.RegionEndpointNotFoundException;
 import org.openstack4j.api.gbp.GbpService;
+import org.openstack4j.api.gnocchi.GnocchiService;
 import org.openstack4j.api.heat.HeatService;
 import org.openstack4j.api.image.ImageService;
+import org.openstack4j.api.magnum.MagnumService;
 import org.openstack4j.api.manila.ShareService;
 import org.openstack4j.api.murano.v1.AppCatalogService;
 import org.openstack4j.api.networking.NetworkingService;
@@ -25,10 +30,6 @@ import org.openstack4j.api.types.ServiceType;
 import org.openstack4j.api.workflow.WorkflowService;
 import org.openstack4j.model.identity.v2.Access;
 import org.openstack4j.model.identity.v3.Token;
-import org.openstack4j.api.magnum.MagnumService;
-
-import java.util.Map;
-import java.util.Set;
 
 /**
  * A client which has been identified. Any calls spawned from this session will
@@ -276,6 +277,8 @@ public interface OSClient< T extends OSClient<T>> {
      * @return the Magnum Service
      */
     MagnumService magnum();
+
+    GnocchiService gnocchi();
 
     /**
      * OpenStack4j Client which authenticates against version V2

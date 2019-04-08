@@ -792,6 +792,34 @@
       {
         "endpoints": [
           {
+            "url": "http://127.0.0.1:8041",
+            "interface": "internal",
+            "region": "RegionOne",
+            "region_id": "RegionOne",
+            "id": "1dd6b21d72a24b25be937a6caecbfedc"
+          },
+          {
+            "url": "http://127.0.0.1:8041",
+            "interface": "admin",
+            "region": "RegionOne",
+            "region_id": "RegionOne",
+            "id": "3bd911641ebe423788488c46f136c942"
+          },
+          {
+            "url": "http://127.0.0.1:8041",
+            "interface": "public",
+            "region": "RegionOne",
+            "region_id": "RegionOne",
+            "id": "67680d754f6f49db9894f2312ffbf12a"
+          }
+        ],
+        "type": "metric",
+        "id": "7e90a8186fcc4a868f1223179eea3e9f",
+        "name": "gnocchi"
+      },
+      {
+        "endpoints": [
+          {
             "region_id": "RegionOne",
             "url": "http://127.0.0.1:8386",
             "region": "RegionOne",
