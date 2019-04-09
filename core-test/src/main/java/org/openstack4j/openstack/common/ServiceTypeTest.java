@@ -39,6 +39,7 @@ public class ServiceTypeTest {
        types.put(ServiceType.MAGNUM, Arrays.asList("container","ContainerV3","containerv1"));
        types.put(ServiceType.DNS, Arrays.asList("dns","dnsv2","dnsV3"));
        types.put(ServiceType.WORKFLOW, Arrays.asList("workflow","workflowv3","workflowv2"));
+       types.put(ServiceType.GNOCCHI, Arrays.asList("gnocchi","gnocchiv1","gnocchiv2"));
 
        unknownTypes = new HashMap();
        unknownTypes.put(ServiceType.ORCHESTRATION, Arrays.asList("heat-cfg","heatother","heatvm","heat-cfg4"));

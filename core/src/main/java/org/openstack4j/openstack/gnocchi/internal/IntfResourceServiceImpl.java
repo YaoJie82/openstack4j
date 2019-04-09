@@ -4,7 +4,7 @@ import java.util.Date;
 import java.util.List;
 
 import org.openstack4j.api.gnocchi.InterfaceResourceService;
-import org.openstack4j.model.gnocchi.Eq;
+import org.openstack4j.model.gnocchi.SearchCondition;
 import org.openstack4j.openstack.gnocchi.domain.GnocchiIntfResource;
 import org.openstack4j.openstack.internal.Parser;
 
@@ -23,18 +23,18 @@ public class IntfResourceServiceImpl extends BaseGnocchiServices implements Inte
     }
 
     @Override
-    public List<? extends GnocchiIntfResource> getByInstId(Eq condtion) {
-        checkNotNull(condtion.getEq().getInstanceId());
+    public List<? extends GnocchiIntfResource> getByInstId(SearchCondition condition) {
+        checkNotNull(condition.getEq().getInstanceId());
         GnocchiIntfResource[] resources = post(GnocchiIntfResource[].class, uri("/search/resource/instance_network_interface"))
-                .entity(condtion).execute();
+                .entity(condition).execute();
         return wrapList(resources);
     }
 
     @Override
-    public List<? extends GnocchiIntfResource> getDetail(Eq condtion) {
-        checkNotNull(condtion.getEq().getId());
+    public List<? extends GnocchiIntfResource> getDetail(SearchCondition condition) {
+        checkNotNull(condition.getEq().getId());
         GnocchiIntfResource[] resources = post(GnocchiIntfResource[].class, uri("/search/resource/instance_network_interface"))
-                .entity(condtion).execute();
+                .entity(condition).execute();
         return wrapList(resources);
     }
 

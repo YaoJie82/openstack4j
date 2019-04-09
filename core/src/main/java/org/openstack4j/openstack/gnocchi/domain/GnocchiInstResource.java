@@ -17,45 +17,40 @@ import com.google.common.base.MoreObjects;
 public class GnocchiInstResource implements InstanceResource {
     private static final long serialVersionUID = 1L;
 
+    private String id;
+    private String type;
     @JsonProperty("user_id")
     private String userId;
-
     @JsonProperty("project_id")
     private String projectId;
 
-    @JsonProperty("display_name")
-    private String displayName;
-
-    @JsonProperty("flavor_name")
-    private String flavorName;
-
-    @JsonProperty("metrics")
-    private Map<String, Object> metrics;
-
-    @JsonProperty("host")
-    private String host;
-
-    @JsonProperty("server_group")
-    private String serverGroup;
-
     @JsonProperty("started_at")
     private String startedAt;
-
     @JsonProperty("ended_at")
     private String endedAt;
 
-    @JsonProperty("id")
-    private String id;
+    @JsonProperty("display_name")
+    private String displayName;
+    @JsonProperty("host")
+    private String host;
+    @JsonProperty("server_group")
+    private String serverGroup;
+    @JsonProperty("flavor_name")
+    private String flavorName;
+    @JsonProperty("metrics")
+    private Map<String, String> metrics;
 
+    @Override
     public String getUserId() {
         return this.userId;
     }
 
-
+    @Override
     public String getProjectId() {
         return this.projectId;
     }
 
+    @Override
     public String getDisplayName() {
         return this.displayName;
     }
@@ -66,7 +61,7 @@ public class GnocchiInstResource implements InstanceResource {
     }
 
     @Override
-    public Map<String, Object> getMetrics() {
+    public Map<String, String> getMetrics() {
         return this.metrics;
     }
 

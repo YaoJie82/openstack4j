@@ -1,0 +1,32 @@
+[
+  {
+    "created_by_user_id": "ac124160a15343389ace06bc1a430000",
+    "user_id": "be0adf2c0eba45659f41f5fbe5c872b4",
+    "project_id": "2a1ac34e4c3f42afbf050fb16bbf1095",
+    "revision_start": "2019-04-02T03:18:59.874584+00:00",
+    "revision_end": null,
+    "creator": "ac124160a15343389ace06bc1a430000:a4274bdaec08461092313baf9dbd2012",
+    "instance_id": "29e2e84f-7a4b-45ff-bd8f-e554fe593e1e",
+    "created_by_project_id": "a4274bdaec08461092313baf9dbd2012",
+    "metrics": {
+      "network.outgoing.packets.rate": "f8a9ace6-39c6-4ee8-953d-ce38c90df35c",
+      "network.outgoing.packets.drop": "5226fde1-cf11-41b8-9c6f-b001651a1ef4",
+      "network.incoming.packets.drop": "7ee33f43-af19-4995-9d5e-ac1d47dffb83",
+      "network.outgoing.packets.error": "37d73113-e146-45d4-b7bc-f3e05fedd474",
+      "network.incoming.bytes.rate": "9267e2c6-4c48-4ccf-8092-51b2cc37ca24",
+      "network.outgoing.bytes.rate": "0de6d996-03ab-4822-a0f4-3d1a255a9bed",
+      "network.incoming.packets": "7fffe796-a540-4de2-897c-446ddfeb3475",
+      "network.incoming.packets.rate": "b78bcaa5-a24e-4aa2-a12f-c4e1899c8756",
+      "network.outgoing.bytes": "27e65567-c63f-4f51-83a6-065b6b6a5b42",
+      "network.incoming.bytes": "2b4486db-df0c-42ac-9ffc-b920e2744b9c",
+      "network.outgoing.packets": "ea94a63c-a076-4984-9cb5-69cc302f3028",
+      "network.incoming.packets.error": "0f939d27-36b4-4d6d-857e-cb201af7eccd"
+    },
+    "original_resource_id": "instance-00000004-29e2e84f-7a4b-45ff-bd8f-e554fe593e1e-tap003227a0-87",
+    "ended_at": null,
+    "started_at": "2019-04-02T03:18:59.874567+00:00",
+    "type": "instance_network_interface",
+    "id": "8406a19b-a93b-5845-92d9-2ec46b75bc47",
+    "name": "tap003227a0-87"
+  }
+]

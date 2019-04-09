@@ -4,7 +4,7 @@ import java.util.Date;
 import java.util.List;
 
 import org.openstack4j.common.RestService;
-import org.openstack4j.model.gnocchi.Eq;
+import org.openstack4j.model.gnocchi.SearchCondition;
 import org.openstack4j.openstack.gnocchi.domain.GnocchiIntfResource;
 
 /**
@@ -26,9 +26,9 @@ public interface InterfaceResourceService extends RestService {
      *
      * @return the Intf Resource
      */
-    List<? extends GnocchiIntfResource> getByInstId(Eq condtion);
+    List<? extends GnocchiIntfResource> getByInstId(SearchCondition condition);
 
-    List<? extends GnocchiIntfResource> getDetail(Eq condtion);
+    List<? extends GnocchiIntfResource> getDetail(SearchCondition condition);
 
     List<? extends GnocchiIntfResource> getIntfInBytes(String intfId, Date value);
 }
