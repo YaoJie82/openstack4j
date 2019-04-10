@@ -17,18 +17,30 @@ public interface InterfaceResourceService extends RestService {
     /**
      * Access to Intf (Measurements) API
      *
-     * @return the list GnocchiIntfResource
+     * @return List<? extends GnocchiIntfResource> the list GnocchiIntfResource
      */
     List<? extends GnocchiIntfResource> list();
 
     /**
      * Access to resource API
-     *
-     * @return the Intf Resource
+     * @param condition the search
+     * @return List<? extends GnocchiIntfResource> the Intf Resource
      */
     List<? extends GnocchiIntfResource> getByInstId(SearchCondition condition);
 
-    List<? extends GnocchiIntfResource> getDetail(SearchCondition condition);
+    /**
+     * Access to intf resource API
+     *
+     * @param interfaceId the search
+     * @return GnocchiIntfResource
+     */
+    GnocchiIntfResource getDetail(String interfaceId);
 
-    List<? extends GnocchiIntfResource> getIntfInBytes(String intfId, Date value);
+//    /**
+//     * Access to intf resource API
+//     *
+//     * @param interfaceId the search
+//     * @return GnocchiIntfResource
+//     */
+//    List<? extends GnocchiIntfResource> getIntfInBytes(String interfaceId);
 }

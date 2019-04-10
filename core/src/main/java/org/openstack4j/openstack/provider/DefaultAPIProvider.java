@@ -46,6 +46,7 @@ import org.openstack4j.api.gbp.PolicyRuleSetService;
 import org.openstack4j.api.gbp.PolicyTargetService;
 import org.openstack4j.api.gbp.ServiceProfileService;
 import org.openstack4j.api.gbp.ServicechainService;
+import org.openstack4j.api.gnocchi.AggregateService;
 import org.openstack4j.api.gnocchi.GnocchiService;
 import org.openstack4j.api.gnocchi.InstanceResourceService;
 import org.openstack4j.api.gnocchi.InterfaceResourceService;
@@ -204,6 +205,7 @@ import org.openstack4j.openstack.gbp.internal.PolicyRuleSetServiceImpl;
 import org.openstack4j.openstack.gbp.internal.PolicyTargetServiceImpl;
 import org.openstack4j.openstack.gbp.internal.ServiceProfileServiceImpl;
 import org.openstack4j.openstack.gbp.internal.ServicechainServiceImpl;
+import org.openstack4j.openstack.gnocchi.internal.AggregateServiceImpl;
 import org.openstack4j.openstack.gnocchi.internal.GnocchiServiceImpl;
 import org.openstack4j.openstack.gnocchi.internal.InstResourceServiceImpl;
 import org.openstack4j.openstack.gnocchi.internal.IntfResourceServiceImpl;
@@ -530,6 +532,7 @@ public class DefaultAPIProvider implements APIProvider {
         bind(CronTriggerService.class, CronTriggerServiceImpl.class);
         bind(InstanceResourceService.class, InstResourceServiceImpl.class);
         bind(InterfaceResourceService.class, IntfResourceServiceImpl.class);
+        bind(AggregateService.class, AggregateServiceImpl.class);
         bind(GnocchiService.class, GnocchiServiceImpl.class);
     }
 

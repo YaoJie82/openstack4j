@@ -9,11 +9,12 @@ import org.testng.annotations.Test;
 
 import static org.testng.Assert.assertEquals;
 import static org.testng.Assert.assertFalse;
+import static org.testng.Assert.assertNotNull;
 
 @Test(suiteName = "Gnocchi")
 public class InstanceResourceServiceTest extends AbstractTest {
     private static final String JSON_INSTACNCES = "/gnocchi/list_instances.json";
-    private static final String JSON_INSTACNCE_BY_NAME = "/gnocchi/instance_by_name.json";
+    private static final String JSON_INSTACNCE = "/gnocchi/instance.json";
 
     /**
      * list all gnocchi instance metrics id
@@ -40,15 +41,13 @@ public class InstanceResourceServiceTest extends AbstractTest {
      */
     @Test
     public void gnocchiInstanceGetByNameTest() throws Exception {
-        respondWith(JSON_INSTACNCE_BY_NAME);
-        List<? extends GnocchiInstResource> insts = osv3().gnocchi().instances()
-                .getDetail(Builders.gnocchi().searchCondition(Builders.gnocchi()
-                        .id("c33658e1-bee2-4785-b189-0c2cdf64c94f").build()).build());
+        respondWith(JSON_INSTACNCE);
+        GnocchiInstResource inst = osv3().gnocchi().instances()
+                .getDetail("c33658e1-bee2-4785-b189-0c2cdf64c94f");
 
-        assertFalse(insts.isEmpty());
-        assertEquals(2, insts.size());
-        assertEquals(insts.get(0).getDisplayName(), "xp");
-        assertEquals(insts.get(0).getFlavorName(), "m1.medium");
+        assertNotNull(inst);
+        assertEquals(inst.getDisplayName(), "demo1");
+        assertEquals(inst.getFlavorName(), "m1.tiny");
     }
 
     @Override

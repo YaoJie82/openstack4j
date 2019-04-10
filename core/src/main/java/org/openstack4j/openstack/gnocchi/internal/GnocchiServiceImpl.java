@@ -1,6 +1,7 @@
 package org.openstack4j.openstack.gnocchi.internal;
 
 import org.openstack4j.api.Apis;
+import org.openstack4j.api.gnocchi.AggregateService;
 import org.openstack4j.api.gnocchi.GnocchiService;
 import org.openstack4j.api.gnocchi.InstanceResourceService;
 import org.openstack4j.api.gnocchi.InterfaceResourceService;
@@ -19,5 +20,10 @@ public class GnocchiServiceImpl implements GnocchiService {
     @Override
     public InterfaceResourceService interfaces() {
         return Apis.get(InterfaceResourceService.class);
+    }
+
+    @Override
+    public AggregateService measureMetric() {
+        return Apis.get(AggregateService.class);
     }
 }

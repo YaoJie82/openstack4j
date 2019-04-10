@@ -22,4 +22,6 @@ public interface GnocchiService extends RestService {
      */
     InterfaceResourceService interfaces();
 
+
+    AggregateService measureMetric();
 }

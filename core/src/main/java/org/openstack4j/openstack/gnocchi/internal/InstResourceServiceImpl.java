@@ -3,7 +3,6 @@ package org.openstack4j.openstack.gnocchi.internal;
 import java.util.List;
 
 import org.openstack4j.api.gnocchi.InstanceResourceService;
-import org.openstack4j.model.gnocchi.SearchCondition;
 import org.openstack4j.openstack.gnocchi.domain.GnocchiInstResource;
 
 import static com.google.common.base.Preconditions.checkNotNull;
@@ -27,9 +26,9 @@ public class InstResourceServiceImpl extends BaseGnocchiServices implements Inst
      * {@inheritDoc}
      */
     @Override
-    public List<? extends GnocchiInstResource> getDetail(SearchCondition condition) {
-        checkNotNull(condition.getEq().getId());
-        GnocchiInstResource[] resources = post(GnocchiInstResource[].class, uri("/search/resource/instance")).entity(condition).execute();
-        return wrapList(resources);
+    public GnocchiInstResource getDetail(String id) {
+        checkNotNull(id);
+        GnocchiInstResource resource = get(GnocchiInstResource.class, uri("/resource/instance/%s", id)).execute();
+        return resource;
     }
 }

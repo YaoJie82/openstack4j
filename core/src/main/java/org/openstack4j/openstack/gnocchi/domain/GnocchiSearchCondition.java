@@ -22,11 +22,6 @@ public class GnocchiSearchCondition implements SearchCondition {
     private SearchCondition eq;
 
     @Override
-    public void setId(String id) {
-        this.id = id;
-    }
-
-    @Override
     public String getId() {
         return this.id;
     }
@@ -39,14 +34,6 @@ public class GnocchiSearchCondition implements SearchCondition {
     @Override
     public String getInstanceId() {
         return instanceId;
-    }
-
-    public void setDisplayName(String display_name) {
-        this.displayName = display_name;
-    }
-
-    public void setInstanceId(String instanceId) {
-        this.instanceId = instanceId;
     }
 
     @Override
