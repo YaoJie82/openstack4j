@@ -5,6 +5,7 @@ import com.fasterxml.jackson.annotation.JsonValue;
 import org.openstack4j.common.Buildable;
 import org.openstack4j.model.appcontainer.builder.AppcontainerBuilder;
 import org.openstack4j.model.common.BasicResource;
+import org.openstack4j.openstack.appcontainer.domain.ZunAppcontainer;
 
 import java.util.List;
 import java.util.Map;
@@ -69,6 +70,9 @@ public interface Appcontainer extends BasicResource, Buildable<AppcontainerBuild
     Map<String, String> getEnvironment();
 
     List<Integer> getPorts();
+
+    Map<String, List<ZunAppcontainer.AppSubnet>> getAddresses();
+
 //    RestartPolicy getRestartPolicy();
 //    AppcontainerStatus getStatus();
 }
