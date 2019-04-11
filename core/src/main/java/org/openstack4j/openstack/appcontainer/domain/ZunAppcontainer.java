@@ -58,6 +58,31 @@ public class ZunAppcontainer implements Appcontainer {
 
     private List<Integer> ports;
 
+    private Map<String, List<AppSubnet>> addresses;
+
+    public static class AppSubnet{
+        public String addr;
+
+        public String port;
+
+        public Boolean preserve_on_delete;
+
+        public String subnet_id;
+
+        public Integer version;
+
+        public String toString(){
+            return MoreObjects.toStringHelper(this)
+                    .add("addr", addr)
+                    .add("port", port)
+                    .add("preserve_on_delete", preserve_on_delete)
+                    .add("subnet_id", subnet_id)
+                    .add("version", version)
+                    .toString();
+        }
+    }
+
+
     @Override
     public String getName() {
         return name;
@@ -144,6 +169,11 @@ public class ZunAppcontainer implements Appcontainer {
     }
 
     @Override
+    public Map<String, List<AppSubnet>> getAddresses() {
+        return addresses;
+    }
+
+    @Override
     public String getId() {
         return id;
     }
@@ -187,6 +217,7 @@ public class ZunAppcontainer implements Appcontainer {
                 .add("environment", environment)
                 .add("label", labels)
                 .add("ports", ports)
+                .add("addresses", addresses)
 //                .add("restartPolicy", restartPolicy)
                 .toString();
     }
