@@ -26,6 +26,7 @@ public enum ServiceType {
 	DNS("designate", "dns"),
 	WORKFLOW("mistral", "workflow"),
 	GNOCCHI("gnocchi","metric"),
+	APPCONTAINER("zun", "container"),
 	UNKNOWN("NA", "NA")
 	;
 
