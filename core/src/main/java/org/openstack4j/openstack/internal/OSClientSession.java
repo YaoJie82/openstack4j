@@ -15,6 +15,7 @@ import org.openstack4j.api.compute.ComputeService;
 import org.openstack4j.api.dns.v2.DNSService;
 import org.openstack4j.api.gbp.GbpService;
 import org.openstack4j.api.gnocchi.GnocchiService;
+import org.openstack4j.api.appcontainer.AppcontainerService;
 import org.openstack4j.api.heat.HeatService;
 import org.openstack4j.api.identity.EndpointURLResolver;
 import org.openstack4j.api.image.ImageService;
@@ -213,6 +214,15 @@ public abstract class OSClientSession<R, T extends OSClient<T>> implements Endpo
     public GnocchiService gnocchi() {
         return Apis.getGnocchiService();
     }
+
+
+    /**
+     * {@inheritDoc}
+     */
+    public AppcontainerService appcontainer() {
+        return Apis.getAppcontainerService();
+    }
+
 
     /**
      * {@inheritDoc}

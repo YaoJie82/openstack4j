@@ -1,5 +1,6 @@
 package org.openstack4j.api;
 
+import org.openstack4j.api.appcontainer.AppcontainerService;
 import org.openstack4j.api.artifact.ArtifactService;
 import org.openstack4j.api.barbican.BarbicanService;
 import org.openstack4j.api.compute.ComputeService;
@@ -235,5 +236,9 @@ public class Apis {
 
     public static GnocchiService getGnocchiService() {
         return get(GnocchiService.class);
+    }
+
+    public static AppcontainerService getAppcontainerService() {
+        return get(AppcontainerService.class);
     }
 }

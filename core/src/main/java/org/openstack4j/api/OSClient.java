@@ -3,6 +3,7 @@ package org.openstack4j.api;
 import java.util.Map;
 import java.util.Set;
 
+import org.openstack4j.api.appcontainer.AppcontainerService;
 import org.openstack4j.api.artifact.ArtifactService;
 import org.openstack4j.api.barbican.BarbicanService;
 import org.openstack4j.api.compute.ComputeService;
@@ -279,6 +280,8 @@ public interface OSClient< T extends OSClient<T>> {
     MagnumService magnum();
 
     GnocchiService gnocchi();
+
+    AppcontainerService appcontainer();
 
     /**
      * OpenStack4j Client which authenticates against version V2
