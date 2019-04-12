@@ -8,6 +8,8 @@ import org.openstack4j.model.appcontainer.builder.AppcontainerBuilder;
 import org.openstack4j.model.common.builder.BasicResourceBuilder;
 import org.openstack4j.openstack.common.ListResult;
 
+import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -23,7 +25,7 @@ public class ZunAppcontainer implements Appcontainer {
     private String image;
 
     @JsonProperty("image_driver")
-    private String imageDriver;
+    private String imageDriver = "glance";
 
     @JsonProperty("command")
     private String cmd;
@@ -43,10 +45,10 @@ public class ZunAppcontainer implements Appcontainer {
 
 //    private Boolean run;
 
-    private Boolean interactive;
+    private boolean interactive;
 
     @JsonProperty("auto_remove")
-    private Boolean autoRemove;
+    private boolean autoRemove;
 
     @JsonProperty("security_groups")
     private List<String> securityGroups;
@@ -81,6 +83,7 @@ public class ZunAppcontainer implements Appcontainer {
         }
     }
 
+    private List<Map<String, String>> nets;
 
     @Override
     public String getName() {
@@ -205,13 +208,13 @@ public class ZunAppcontainer implements Appcontainer {
 //                .add("labels", labels)
                 .add("cmd", cmd)
 //                .add("runtime", runtime)
-                .add("workdir", workDir)
+                .add("workDir", workDir)
                 .add("hostname", hostName)
                 .add("imagePullPolicy", imagePullPolicy)
                 .add("cpu", cpu)
                 .add("memory", memory)
                 .add("interactive", interactive)
-                .add("autoremove", autoRemove)
+                .add("autoRemove", autoRemove)
                 .add("securityGroups", securityGroups)
                 .add("environment", environment)
                 .add("label", labels)
@@ -277,11 +280,11 @@ public class ZunAppcontainer implements Appcontainer {
             return this;
         }
 
-        @Override
-        public AppcontainerBuilder imagePullPolicy(String policy) {
-            m.imagePullPolicy = policy;
-            return this;
-        }
+//        @Override
+//        public AppcontainerBuilder imagePullPolicy(String policy) {
+//            m.imagePullPolicy = policy;
+//            return this;
+//        }
 
         @Override
         public AppcontainerBuilder cpu(Float cpuCount) {
@@ -325,11 +328,38 @@ public class ZunAppcontainer implements Appcontainer {
             return this;
         }
 
+//        @Override
+//        public AppcontainerBuilder ports(List<Integer> ports) {
+//            m.ports = ports;
+//            return this;
+//        }
+
         @Override
-        public AppcontainerBuilder ports(List<Integer> ports) {
-            m.ports = ports;
+        public AppcontainerBuilder network(String net) {
+            Map<String, String> mNet = new HashMap<String, String>();
+            mNet.put("network", net);
+
+            if(m.nets == null)
+            {
+                m.nets = new ArrayList<Map<String, String>>();
+            }
+
+            m.nets.add(mNet);
             return this;
         }
+
+// TODO: need kuryr first
+//        @Override
+//        public AppcontainerBuilder port(String port) {
+//            Map<String, String> mPort = new HashMap<String, String>();
+//            mPort.put("port", port);
+//            if(m.nets == null)
+//            {
+//                m.nets = new ArrayList<Map<String, String>>();
+//            }
+//            m.nets.add(mPort);
+//            return this;
+//        }
 
         //BUILD
 
