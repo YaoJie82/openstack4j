@@ -20,7 +20,7 @@ public interface AppcontainerBuilder extends Buildable.Builder<AppcontainerBuild
 
     AppcontainerBuilder hostname(String hostName);
 
-    AppcontainerBuilder imagePullPolicy(String policy);
+//    AppcontainerBuilder imagePullPolicy(String policy);
 
     AppcontainerBuilder cpu(Float cpuCount);
 
@@ -36,11 +36,9 @@ public interface AppcontainerBuilder extends Buildable.Builder<AppcontainerBuild
 
     AppcontainerBuilder labels(Map<String, String> labels);
 
-    AppcontainerBuilder ports(List<Integer> ports);
+    AppcontainerBuilder network(String net);
 
+//    AppcontainerBuilder port(String port);  //need kuryr first
 
-
-//    AppcontainerBuilder nets();
-
-    //    AppcontainerBuilder restartPolicy(RestartPolicy policy);
+//    AppcontainerBuilder restartPolicy(RestartPolicy policy);
 }
