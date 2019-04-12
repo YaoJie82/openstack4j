@@ -56,7 +56,7 @@ public interface Appcontainer extends BasicResource, Buildable<AppcontainerBuild
 
     Float getCpu();
 
-    Integer getMemory();
+    String getMemory();
 
     //    boolean isRun();
     boolean isInteractive();

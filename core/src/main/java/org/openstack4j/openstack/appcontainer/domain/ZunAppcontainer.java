@@ -4,7 +4,6 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.google.common.base.MoreObjects;
 import org.openstack4j.model.appcontainer.Appcontainer;
-import org.openstack4j.model.appcontainer.RestartPolicy;
 import org.openstack4j.model.appcontainer.builder.AppcontainerBuilder;
 import org.openstack4j.model.common.builder.BasicResourceBuilder;
 import org.openstack4j.openstack.common.ListResult;
@@ -40,7 +39,7 @@ public class ZunAppcontainer implements Appcontainer {
 
     private Float cpu;
 
-    private Integer memory;
+    private String memory;
 
 //    private Boolean run;
 
@@ -129,7 +128,7 @@ public class ZunAppcontainer implements Appcontainer {
     }
 
     @Override
-    public Integer getMemory() {
+    public String getMemory() {
         return memory;
     }
 
@@ -253,71 +252,86 @@ public class ZunAppcontainer implements Appcontainer {
             return this;
         }
 
-//        @Override
-//        public AppcontainerBuilder labels(List<String> labels) {
-//            m.labels = labels;
-//            return this;
-//        }
-//
-//        @Override
-//        public AppcontainerBuilder cmd(String cmd) {
-//            m.cmd = cmd;
-//            return this;
-//        }
-//
-//        @Override
-//        public AppcontainerBuilder workdir(String dir) {
-//            m.workdir = dir;
-//            return this;
-//        }
-//
-//        @Override
-//        public AppcontainerBuilder hostname(String hostName) {
-//            m.hostname = hostName;
-//            return this;
-//        }
-//
-//        @Override
-//        public AppcontainerBuilder cpu(Integer cpuCount) {
-//            m.cpu = cpuCount;
-//            return this;
-//        }
-//
-//        @Override
-//        public AppcontainerBuilder memory(Integer memorySize) {
-//            m.memory = memorySize;
-//            return this;
-//        }
-//
-//        @Override
-//        public AppcontainerBuilder interactive(boolean interactive) {
-//            m.interactive = interactive;
-//            return this;
-//        }
-//
-//        @Override
-//        public AppcontainerBuilder autoremove(boolean autoremove) {
-//            m.autoremove = autoremove;
-//            return this;
-//        }
-//
-//        @Override
-//        public AppcontainerBuilder ports(List<Integer> ports) {
-//            m.ports = ports;
-//            return this;
-//        }
-//
-//        @Override
-//        public AppcontainerBuilder restartPolicy(RestartPolicy policy) {
-//            m.restartPolicy = policy;
-//            return this;
-//        }
-//
-//        @Override
-//        public AppcontainerBuilder nets() {
-//            //TODO: net model
-//            return this;
-//        }
+        @Override
+        public AppcontainerBuilder imageDriver(String imageDriver) {
+            //TODO: HARD CODE
+            m.imageDriver = "glance";
+            return this;
+        }
+
+        @Override
+        public AppcontainerBuilder cmd(String cmd) {
+            m.cmd = cmd;
+            return this;
+        }
+
+        @Override
+        public AppcontainerBuilder workDir(String dir) {
+            m.workDir = dir;
+            return this;
+        }
+
+        @Override
+        public AppcontainerBuilder hostname(String hostName) {
+            m.hostName = hostName;
+            return this;
+        }
+
+        @Override
+        public AppcontainerBuilder imagePullPolicy(String policy) {
+            m.imagePullPolicy = policy;
+            return this;
+        }
+
+        @Override
+        public AppcontainerBuilder cpu(Float cpuCount) {
+            m.cpu = cpuCount;
+            return this;
+        }
+
+        @Override
+        public AppcontainerBuilder memory(String memorySize) {
+            m.memory = memorySize;
+            return this;
+        }
+
+        @Override
+        public AppcontainerBuilder interactive(boolean interactive) {
+            m.interactive = interactive;
+            return this;
+        }
+
+        @Override
+        public AppcontainerBuilder autoRemove(boolean autoRemove) {
+            m.autoRemove = autoRemove;
+            return this;
+        }
+
+        @Override
+        public AppcontainerBuilder securityGroups(List<String> groups) {
+            m.securityGroups = groups;
+            return this;
+        }
+
+        @Override
+        public AppcontainerBuilder environment(Map<String, String> envs) {
+            m.environment = envs;
+            return this;
+        }
+
+        @Override
+        public AppcontainerBuilder labels(Map<String, String> labels) {
+            m.labels = labels;
+            return this;
+        }
+
+        @Override
+        public AppcontainerBuilder ports(List<Integer> ports) {
+            m.ports = ports;
+            return this;
+        }
+
+        //BUILD
 
         @Override
         public Appcontainer build() {

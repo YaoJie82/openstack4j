@@ -18,7 +18,7 @@ public class AppcontainerServiceImpl extends BaseAppcontainerServices implements
     @Override
     public Appcontainer create(Appcontainer appcontainer) {
         checkNotNull(appcontainer);
-        return post(ZunAppcontainer.class, uri("/containers")).entity(appcontainer).execute();
+        return post(ZunAppcontainer.class, uri("/containers")).header("OpenStack-API-Version", "container 1.12") .entity(appcontainer).execute();
     }
 
     @Override
