@@ -1,0 +1,41 @@
+{
+    "addresses": null,
+    "links": [
+        {
+            "href": "http://192.168.134.133:9517/v1/containers/28c56071-10c8-48e2-95d0-3803b8591131",
+            "rel": "self"
+        },
+        {
+            "href": "http://192.168.134.133:9517/containers/28c56071-10c8-48e2-95d0-3803b8591131",
+            "rel": "bookmark"
+        }
+    ],
+    "image": "nginx-docker",
+    "labels": null,
+    "disk": 0,
+    "security_groups": [
+        "2dd9b1bc-c293-49f8-b904-6ab752171de1"
+    ],
+    "image_pull_policy": "ifnotpresent",
+    "user_id": "0bbe7363350849e39cf2891628ad603d",
+    "uuid": "28c56071-10c8-48e2-95d0-3803b8591131",
+    "hostname": null,
+    "environment": null,
+    "memory": "512M",
+    "project_id": "c65271d2b7f04490b250a77250127d2c",
+    "status": "Creating",
+    "workdir": null,
+    "auto_remove": false,
+    "status_detail": null,
+    "host": null,
+    "image_driver": "glance",
+    "task_state": null,
+    "status_reason": null,
+    "name": "n6",
+    "restart_policy": null,
+    "cpu": 1,
+    "command": null,
+    "runtime": null,
+    "ports": null,
+    "interactive": true
+}
