@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.google.common.base.MoreObjects;
 import org.openstack4j.model.appcontainer.Appcontainer;
+import org.openstack4j.model.appcontainer.Status;
 import org.openstack4j.model.appcontainer.builder.AppcontainerBuilder;
 import org.openstack4j.model.common.builder.BasicResourceBuilder;
 import org.openstack4j.openstack.common.ListResult;
@@ -61,6 +62,8 @@ public class ZunAppcontainer implements Appcontainer {
 
     private Map<String, List<AppSubnet>> addresses;
 
+    private Status status;
+
     public static class AppSubnet{
         public String addr;
 
@@ -84,6 +87,11 @@ public class ZunAppcontainer implements Appcontainer {
     }
 
     private List<Map<String, String>> nets;
+
+    @Override
+    public Status getStatus() {
+        return status;
+    }
 
     @Override
     public String getName() {
@@ -220,6 +228,7 @@ public class ZunAppcontainer implements Appcontainer {
                 .add("label", labels)
                 .add("ports", ports)
                 .add("addresses", addresses)
+                .add("status", status)
 //                .add("restartPolicy", restartPolicy)
                 .toString();
     }

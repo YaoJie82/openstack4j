@@ -40,6 +40,8 @@ public interface Appcontainer extends BasicResource, Buildable<AppcontainerBuild
 //    }
 //
 //
+    Status getStatus();
+
     String getName();
 
     String getImage();
