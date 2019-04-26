@@ -56,6 +56,7 @@ public abstract class AbstractTest {
         ARTIFACT(9494),
         CLUSTERING(8778),
         APP_CATALOG(8082),
+        APP_CONTAINER(9517),
         DNS(9001),
         WORKFLOW(8989);
 

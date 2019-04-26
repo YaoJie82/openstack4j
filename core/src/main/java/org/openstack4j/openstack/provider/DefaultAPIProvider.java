@@ -3,6 +3,7 @@ package org.openstack4j.openstack.provider;
 import java.util.Map;
 
 import org.openstack4j.api.APIProvider;
+import org.openstack4j.api.appcontainer.AppcontainerService;
 import org.openstack4j.api.artifact.ArtifactService;
 import org.openstack4j.api.artifact.ToscaTemplatesArtifactService;
 import org.openstack4j.api.barbican.BarbicanService;
@@ -163,6 +164,7 @@ import org.openstack4j.api.workflow.WorkflowDefinitionService;
 import org.openstack4j.api.workflow.WorkflowEnvironmentService;
 import org.openstack4j.api.workflow.WorkflowExecutionService;
 import org.openstack4j.api.workflow.WorkflowService;
+import org.openstack4j.openstack.appcontainer.internal.AppcontainerServiceImpl;
 import org.openstack4j.openstack.artifact.internal.ArtifactServiceImpl;
 import org.openstack4j.openstack.artifact.internal.ToscaTemplatesArtifactServiceImpl;
 import org.openstack4j.openstack.barbican.internal.BarbicanServiceImpl;
@@ -534,6 +536,7 @@ public class DefaultAPIProvider implements APIProvider {
         bind(InterfaceResourceService.class, IntfResourceServiceImpl.class);
         bind(AggregateService.class, AggregateServiceImpl.class);
         bind(GnocchiService.class, GnocchiServiceImpl.class);
+        bind(AppcontainerService.class, AppcontainerServiceImpl.class);
     }
 
     /**

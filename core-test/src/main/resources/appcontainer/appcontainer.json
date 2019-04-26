@@ -1,0 +1,51 @@
+{
+    "addresses": {
+        "17189223-5de0-41d2-91c6-1793b3ab6ceb": [
+            {
+                "subnet_id": "c6917d9a-f641-4a09-95c5-ee8fef7de537",
+                "version": 4,
+                "preserve_on_delete": false,
+                "addr": "10.0.0.4",
+                "port": "622d2a52-47f6-4b7b-b674-bb58d9c94670"
+            }
+        ]
+    },
+    "links": [
+        {
+            "href": "http://192.168.134.133:9517/v1/containers/4b70056f-033f-4ea1-8707-3e313aa6bd05",
+            "rel": "self"
+        },
+        {
+            "href": "http://192.168.134.133:9517/containers/4b70056f-033f-4ea1-8707-3e313aa6bd05",
+            "rel": "bookmark"
+        }
+    ],
+    "image": "nginx-docker",
+    "labels": {},
+    "disk": 0,
+    "security_groups": [],
+    "image_pull_policy": "ifnotpresent",
+    "user_id": "0bbe7363350849e39cf2891628ad603d",
+    "uuid": "4b70056f-033f-4ea1-8707-3e313aa6bd05",
+    "hostname": "30dbb420aa79",
+    "environment": {},
+    "memory": null,
+    "project_id": "c65271d2b7f04490b250a77250127d2c",
+    "status": "Running",
+    "workdir": null,
+    "auto_remove": false,
+    "status_detail": "Created",
+    "host": "control01",
+    "image_driver": "glance",
+    "task_state": null,
+    "status_reason": null,
+    "name": "n2",
+    "restart_policy": {},
+    "cpu": null,
+    "command": "nginx -g daemon off;",
+    "runtime": "runc",
+    "ports": [
+        80
+    ],
+    "interactive": true
+}
