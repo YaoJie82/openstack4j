@@ -205,10 +205,6 @@ import org.openstack4j.openstack.telemetry.domain.CeilometerAlarm;
 import org.openstack4j.openstack.trove.builder.TroveBuilders;
 import org.openstack4j.openstack.workflow.builder.MistralBuilders;
 
-<<<<<<<HEAD
-=======
-        >>>>>>>add zun functions:Builder.appcontainer.except for nets etc.
-
 /**
  * A utility class to quickly access available Builders within the OpenStack API
  *

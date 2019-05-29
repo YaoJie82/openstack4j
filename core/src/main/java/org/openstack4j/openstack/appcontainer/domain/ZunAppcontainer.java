@@ -86,7 +86,8 @@ public class ZunAppcontainer implements Appcontainer {
         }
     }
 
-    private List<Map<String, String>> nets;
+    @JsonProperty("nets")
+    private List<Map<String, Object>> nets;
 
     @Override
     public Status getStatus() {
@@ -345,12 +346,12 @@ public class ZunAppcontainer implements Appcontainer {
 
         @Override
         public AppcontainerBuilder network(String net) {
-            Map<String, String> mNet = new HashMap<String, String>();
+            Map<String, Object> mNet = new HashMap<String, Object>();
             mNet.put("network", net);
 
             if(m.nets == null)
             {
-                m.nets = new ArrayList<Map<String, String>>();
+                m.nets = new ArrayList<Map<String, Object>>();
             }
 
             m.nets.add(mNet);
